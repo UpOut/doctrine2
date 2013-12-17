@@ -101,7 +101,7 @@ abstract class AbstractQuery
      *
      * @var integer
      */
-    protected $_hydrationMode = self::HYDRATE_OBJECT;
+    protected $_hydrationMode = self::HYDRATE_ARRAY;
 
     /**
      * @param \Doctrine\DBAL\Cache\QueryCacheProfile
@@ -560,16 +560,17 @@ abstract class AbstractQuery
         return $this->_hydrationMode;
     }
 
+    ///UPOUT MODIFICATIONS
     /**
      * Gets the list of results for the query.
      *
-     * Alias for execute(null, $hydrationMode = HYDRATE_OBJECT).
+     * Alias for execute(null, $hydrationMode = HYDRATE_ARRAY).
      *
      * @param int $hydrationMode
      *
      * @return array
      */
-    public function getResult($hydrationMode = self::HYDRATE_OBJECT)
+    public function getResult($hydrationMode = self::HYDRATE_ARRAY)
     {
         return $this->execute(null, $hydrationMode);
     }
@@ -581,10 +582,12 @@ abstract class AbstractQuery
      *
      * @return array
      */
-    public function getArrayResult()
+    public function getObjectResult()
     {
-        return $this->execute(null, self::HYDRATE_ARRAY);
+        return $this->execute(null, self::HYDRATE_OBJECT);
     }
+
+    //END UPOUT MODIFICATIONS
 
     /**
      * Gets the scalar results for the query.

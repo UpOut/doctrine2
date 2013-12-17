@@ -1461,10 +1461,12 @@ class ClassMetadataInfo implements ClassMetadata
                     $joinColumn['referencedColumnName'] = $this->namingStrategy->referenceColumnName();
                 }
 
+                //START UPOUT MODIFICATIONS
                 if ($joinColumn['name'][0] === '`') {
-                    $joinColumn['name']   = trim($joinColumn['name'], '`');
+                    //$joinColumn['name']   = trim($joinColumn['name'], '`');
                     $joinColumn['quoted'] = true;
                 }
+                //END UPOUT MODIFICATIONS
 
                 if ($joinColumn['referencedColumnName'][0] === '`') {
                     $joinColumn['referencedColumnName'] = trim($joinColumn['referencedColumnName'], '`');
@@ -1578,10 +1580,12 @@ class ClassMetadataInfo implements ClassMetadata
                     $joinColumn['referencedColumnName'] = $this->namingStrategy->referenceColumnName();
                 }
 
+                //START UPOUT MODIFICATIONS
                 if ($joinColumn['name'][0] === '`') {
-                    $joinColumn['name']   = trim($joinColumn['name'], '`');
+                    //$joinColumn['name']   = trim($joinColumn['name'], '`');
                     $joinColumn['quoted'] = true;
                 }
+                //END UPOUT MODIFICATIONS
 
                 if ($joinColumn['referencedColumnName'][0] === '`') {
                     $joinColumn['referencedColumnName'] = trim($joinColumn['referencedColumnName'], '`');
@@ -1605,10 +1609,13 @@ class ClassMetadataInfo implements ClassMetadata
                     $inverseJoinColumn['referencedColumnName'] = $this->namingStrategy->referenceColumnName();
                 }
 
+                //START UPOUT MODIFICATIONS
                 if ($inverseJoinColumn['name'][0] === '`') {
-                    $inverseJoinColumn['name']   = trim($inverseJoinColumn['name'], '`');
+                    //$inverseJoinColumn['name']   = trim($inverseJoinColumn['name'], '`');
                     $inverseJoinColumn['quoted'] = true;
                 }
+                //END UPOUT MODIFICATIONS
+
 
                 if ($inverseJoinColumn['referencedColumnName'][0] === '`') {
                     $inverseJoinColumn['referencedColumnName']  = trim($inverseJoinColumn['referencedColumnName'], '`');

@@ -560,7 +560,6 @@ final class Query extends AbstractQuery
         return $this->_maxResults;
     }
 
-    //START UPOUT MODIFICATIONS
     /**
      * Executes the query and returns an IterableResult that can be used to incrementally
      * iterated over the result.
@@ -570,14 +569,12 @@ final class Query extends AbstractQuery
      *
      * @return \Doctrine\ORM\Internal\Hydration\IterableResult
      */
-    public function iterate($parameters = null, $hydrationMode = self::HYDRATE_ARRAY)
+    public function iterate($parameters = null, $hydrationMode = self::HYDRATE_OBJECT)
     {
         $this->setHint(self::HINT_INTERNAL_ITERATION, true);
 
         return parent::iterate($parameters, $hydrationMode);
     }
-
-    //END UPOUT MODIFICATIONS
 
     /**
      * {@inheritdoc}
